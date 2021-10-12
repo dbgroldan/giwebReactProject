@@ -19,11 +19,11 @@ const getData = async () => {
 const setData = async data => {
     try {
         const response = await fetch(publicationsURL, {
-            method: "GET",
+            method: "POST",
             headers: {
                 "Content-Type": "application/json",
-            body: data
-            }
+            },
+            body: JSON.stringify(data)
         });
         return await response.json();
     }
